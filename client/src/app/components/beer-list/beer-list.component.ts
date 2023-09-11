@@ -9,4 +9,5 @@ import {Beer} from "../../shared/models/beer.model";
 export class BeerListComponent {
 
   beers: Beer[];
+  columnsToDisplay = ['beerName', 'brewery', 'style', 'bottledDate', 'storedDate', 'rating']
 }

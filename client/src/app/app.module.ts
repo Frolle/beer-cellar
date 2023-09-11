@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BeerListComponent } from './components/beer-list/beer-list.component';
 import { BeerListItemComponent } from './components/beer-list-item/beer-list-item.component';
+import {MatTableModule} from "@angular/material/table";
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { BeerListItemComponent } from './components/beer-list-item/beer-list-ite
   ],
   imports: [
     BrowserModule,
+    MatTableModule,
     AppRoutingModule
   ],
   providers: [],
