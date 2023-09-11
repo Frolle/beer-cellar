@@ -13,19 +13,9 @@ export class BeerListComponent {
   constructor() {
     this.beers = [
       Object.assign(new Beer), {"name": "Grolsch", "style": "Lager", bottledDate: new Date(1253, 1, 31), rating: 2.53},
-      Object.assign(new Beer), {
-        "name": "max feta juice",
-        "style": "fet Double IPA",
-        bottledDate: new Date(1253, 1, 31),
-        rating: 5.0
-      },
+      Object.assign(new Beer), {"name": "max feta juice","style": "fet Double IPA",bottledDate: new Date(1253, 1, 31),rating: 5.0},
       Object.assign(new Beer), {"name": "Heineken", "style": "Lager", bottledDate: new Date(1700, 1, 31), rating: 1.2},
-      Object.assign(new Beer), {
-        "name": "Stigbergets Big Bourbon",
-        "style": "Barley Wine",
-        bottledDate: new Date(1253, 1, 31),
-        rating: 4.53
-      },
+      Object.assign(new Beer), {"name": "Stigbergets Big Bourbon","style": "Barley Wine",bottledDate: new Date(1253, 1, 31),rating: 4.53},
     ];
   }
 }
