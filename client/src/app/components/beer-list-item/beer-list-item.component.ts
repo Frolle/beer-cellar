@@ -1,5 +1,4 @@
-import {Component, Input} from '@angular/core';
-import {Beer} from "../../shared/models/beer.model";
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-beer-list-item',
@@ -7,6 +6,6 @@ import {Beer} from "../../shared/models/beer.model";
   styleUrls: ['./beer-list-item.component.scss']
 })
 export class BeerListItemComponent {
-  @Input()
-  beer: Beer;
+//   @Input()
+//   beer: Beer;
 }
