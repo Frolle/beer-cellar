@@ -1,7 +1,7 @@
 # Read Me First
 The following was discovered as part of building this project:
 
-* The original package name 'se.dirnberger.beer-cellar' is invalid and this project uses 'se.dirnberger.beercellar' instead.
+* The original package name 'se.frolldevs.beer-cellar' is invalid and this project uses 'se.frolldevs.beercellar' instead.
 
 # Getting Started
 

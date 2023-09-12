@@ -1,8 +1,8 @@
-package se.dirnberger.beercellar.db.repository;
+package se.frolldevs.beercellar.db.repository;
 
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
-import se.dirnberger.beercellar.db.model.Beer;
+import se.frolldevs.beercellar.db.model.Beer;
 
 
 @Repository

@@ -1,4 +1,4 @@
-package se.dirnberger.beercellar.db.model;
+package se.frolldevs.beercellar.db.model;
 
 import jakarta.persistence.*;
 import lombok.Getter;

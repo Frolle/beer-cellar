@@ -1,11 +1,11 @@
-package se.dirnberger.beercellar;
+package se.frolldevs.beercellar;
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
-import se.dirnberger.beercellar.db.model.Beer;
-import se.dirnberger.beercellar.db.repository.BeerRepository;
+import se.frolldevs.beercellar.db.model.Beer;
+import se.frolldevs.beercellar.db.repository.BeerRepository;
 
 import java.util.stream.Stream;
 
