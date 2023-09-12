@@ -1,0 +1,14 @@
+# Use postgres/example user/password credentials
+version: '3.1'
+
+services:
+
+  beer-cellar-db:
+    image: postgres:latest
+    restart: on-failure
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_PASSWORD: beerIsGood
+      POSTGRES_USER: beer_admin
+      POSTGRES_DB: beer_cellar_db

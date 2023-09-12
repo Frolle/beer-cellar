@@ -1,12 +1,15 @@
 package se.dirnberger.beercellar.db.model;
 
 import jakarta.persistence.*;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.time.LocalDate;
 import java.util.Set;
 
-@Data
+@Getter
+@Setter
+@Entity
 public class Beer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -26,4 +29,5 @@ public class Beer {
     private LocalDate bottledDate;
     private LocalDate storedDate;
     private Double rating;
+
 }

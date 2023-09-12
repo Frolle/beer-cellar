@@ -1,11 +1,14 @@
 package se.dirnberger.beercellar.db.model;
 
 import jakarta.persistence.*;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.Set;
 
-@Data
+@Getter
+@Setter
+@Entity
 public class Brewery {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -16,6 +19,6 @@ public class Brewery {
 
     private String country;
 
-    @ManyToMany(mappedBy = "brewery_beers")
+    @ManyToMany(mappedBy = "breweries")
     private Set<Beer> beers;
 }

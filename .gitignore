@@ -115,3 +115,6 @@ fabric.properties
 # Azure Toolkit for IntelliJ plugin
 # https://plugins.jetbrains.com/plugin/8053-azure-toolkit-for-intellij
 .idea/**/azureSettings.xml
+/.jpb/jpb-settings.xml
+/.idea/dataSources.xml
+/.idea/jpa-buddy.xml
