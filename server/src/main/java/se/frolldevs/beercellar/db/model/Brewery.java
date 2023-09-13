@@ -1,5 +1,6 @@
 package se.frolldevs.beercellar.db.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -20,5 +21,6 @@ public class Brewery {
     private String country;
 
     @ManyToMany(mappedBy = "breweries")
+    @JsonIgnore
     private Set<Beer> beers;
 }

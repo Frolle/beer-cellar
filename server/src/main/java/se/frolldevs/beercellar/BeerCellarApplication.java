@@ -1,31 +1,34 @@
 package se.frolldevs.beercellar;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.Bean;
-import se.frolldevs.beercellar.db.model.Beer;
-import se.frolldevs.beercellar.db.repository.BeerRepository;
-
-import java.util.stream.Stream;
+import se.frolldevs.beercellar.bean.BeerCellarDbInitialization;
 
 @SpringBootApplication
-public class BeerCellarApplication {
+public class BeerCellarApplication implements CommandLineRunner{
 
+
+	@Value("${shouldInitializeDb}")
+	private boolean shouldInitializeDb;
+
+	private final BeerCellarDbInitialization beerCellarDbInitialization;
 	public static void main(String[] args) {
 		SpringApplication.run(BeerCellarApplication.class, args);
 	}
 
-	@Bean
-	CommandLineRunner init(BeerRepository beerRepository) {
-		return args -> {
-			Stream.of("West Coast IPA", "Astra Urtyp (önskad av C0la_dragon)", "Ingen (önskad av BabyDragonling83)", "Eclipse", "Westvleteren 12 (önskad av C0la_dragon)").forEach(name -> {
-				Beer beer = new Beer();
-				beer.setName(name);
-				beerRepository.save(beer);
+	@Autowired
+	public BeerCellarApplication(BeerCellarDbInitialization beerCellarDbInitialization) {
+		this.beerCellarDbInitialization = beerCellarDbInitialization;
+	}
 
-			});
-			beerRepository.findAll().forEach(System.out::println);
-		};
+
+	@Override
+	public void run(String... args) {
+		if (shouldInitializeDb) {
+			this.beerCellarDbInitialization.createDummyData();
+		}
 	}
 }

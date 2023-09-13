@@ -1,9 +1,7 @@
 package se.frolldevs.beercellar.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import se.frolldevs.beercellar.db.model.Beer;
 import se.frolldevs.beercellar.db.repository.BeerRepository;
 
@@ -19,5 +17,10 @@ public class BeerController {
     @GetMapping("/beers")
     public Iterable<Beer> getBeers() {
         return beerRepository.findAll();
+    }
+
+    @PostMapping("/beers")
+    public void addBeer(@RequestBody Beer beer) {
+        beerRepository.save(beer);
     }
 }
