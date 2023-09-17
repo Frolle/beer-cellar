@@ -9,6 +9,7 @@ import {HttpClientModule} from "@angular/common/http";
 import {MatButtonModule} from "@angular/material/button";
 import {BeerFormComponent} from './components/beer-form/beer-form.component';
 import {ReactiveFormsModule} from "@angular/forms";
+import {MatSliderModule} from "@angular/material/slider";
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import {ReactiveFormsModule} from "@angular/forms";
     AppRoutingModule,
     HttpClientModule,
     MatButtonModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatSliderModule
   ],
   providers: [],
   bootstrap: [AppComponent]

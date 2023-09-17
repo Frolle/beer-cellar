@@ -22,6 +22,5 @@ export class BeerService {
       error: (e) => console.error('failed when adding beer', e),
       complete: () => console.info('Successfully added your beer!')
     });
-
   }
 }

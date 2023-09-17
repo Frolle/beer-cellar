@@ -1,5 +1,7 @@
 import {Component} from '@angular/core';
 import {FormControl, FormGroup} from "@angular/forms";
+import {BeerService} from "../../shared/services/beer.service";
+import {Beer} from "../../shared/models/beer.model";
 
 @Component({
   selector: 'app-beer-form',
@@ -14,4 +16,14 @@ export class BeerFormComponent {
     storedDate: new FormControl(),
     rating: new FormControl()
   });
+
+
+  constructor(private beerService: BeerService) {
+
+  }
+
+  onSubmit() {
+    let newBeer = Object.assign(new Beer(), this.beerForm.value);
+    this.beerService.addBeer(newBeer)
+  }
 }

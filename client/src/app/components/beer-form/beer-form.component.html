@@ -1,13 +1,26 @@
-<form [formGroup]="beerForm">
-  <label for="beer-name">Beer name:</label>
-  <input id="beer-name" type="text" formControlName="name">
-
-  <label for="beer-style">Beer style:</label>
-  <input id="beer-style" type="text" formControlName="style">
-  <label for="bottled-date">Bottled date:</label>
-  <input id="bottled-date" type="date" formControlName="bottledDate">
-  <label for="stored-date">Stored date:</label>
-  <input id="stored-date" type="date" formControlName="storedDate">
-  <label for="rating">Rating: </label>
-  <input id="rating" type="range" min="0" max="5" step="0.25" formControlName="rating">
+<form [formGroup]="beerForm" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label for="beer-name">Beer name:</label>
+    <input id="beer-name" type="text" formControlName="name">
+  </div>
+  <div class="form-group">
+    <label for="beer-style">Beer style:</label>
+    <input id="beer-style" type="text" formControlName="style">
+  </div>
+  <div class="form-group">
+    <label for="bottled-date">Bottled date:</label>
+    <input id="bottled-date" type="date" formControlName="bottledDate">
+  </div>
+  <div class="form-group">
+    <label for="stored-date">Stored date:</label>
+    <input id="stored-date" type="date" formControlName="storedDate">
+  </div>
+  <div class="form-group">
+    <label for="rating">Rating: </label>
+    <mat-slider discrete id="rating" min="0" max="5" step="0.25" >
+      <input matSliderThumb value="2.5" formControlName="rating">
+    </mat-slider>
+  </div>
+  <p>Complete the form to enable button.</p>
+  <button type="submit" [disabled]="!beerForm.valid">Submit</button>
 </form>
