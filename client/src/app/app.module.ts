@@ -10,6 +10,9 @@ import {MatButtonModule} from "@angular/material/button";
 import {BeerFormComponent} from './components/beer-form/beer-form.component';
 import {ReactiveFormsModule} from "@angular/forms";
 import {MatSliderModule} from "@angular/material/slider";
+import {MatDialogModule} from "@angular/material/dialog";
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -24,7 +27,10 @@ import {MatSliderModule} from "@angular/material/slider";
     HttpClientModule,
     MatButtonModule,
     ReactiveFormsModule,
-    MatSliderModule
+    MatSliderModule,
+    MatDialogModule,
+    MatFormFieldModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

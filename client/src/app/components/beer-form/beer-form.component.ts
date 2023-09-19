@@ -2,6 +2,7 @@ import {Component} from '@angular/core';
 import {FormControl, FormGroup} from "@angular/forms";
 import {BeerService} from "../../shared/services/beer.service";
 import {Beer} from "../../shared/models/beer.model";
+import {MatDialog} from "@angular/material/dialog";
 
 @Component({
   selector: 'app-beer-form',
@@ -18,7 +19,7 @@ export class BeerFormComponent {
   });
 
 
-  constructor(private beerService: BeerService) {
+  constructor(private beerService: BeerService, public dialog: MatDialog) {
 
   }
 
@@ -26,4 +27,16 @@ export class BeerFormComponent {
     let newBeer = Object.assign(new Beer(), this.beerForm.value);
     this.beerService.addBeer(newBeer)
   }
+
+  onCancel(): void {
+    if(this.beerForm.dirty) {
+      this.dialog.closeAll();
+      // const dialogRef = this.dialog.open(DeleteComponent, {
+      //   width: '340px',
+      // });
+    } else {
+      this.dialog.closeAll();
+    }
+  }
+
 }

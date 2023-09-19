@@ -1,26 +1,30 @@
-<form [formGroup]="beerForm" (ngSubmit)="onSubmit()">
-  <div class="form-group">
+<h2 mat-dialog-title>Add beer</h2>
+<mat-dialog-content [formGroup]="beerForm" (ngSubmit)="onSubmit()">
+  <mat-form-field>
     <label for="beer-name">Beer name:</label>
     <input id="beer-name" type="text" formControlName="name">
-  </div>
-  <div class="form-group">
+  </mat-form-field>
+  <mat-form-field>
     <label for="beer-style">Beer style:</label>
     <input id="beer-style" type="text" formControlName="style">
-  </div>
-  <div class="form-group">
+  </mat-form-field>
+  <mat-form-field>
     <label for="bottled-date">Bottled date:</label>
     <input id="bottled-date" type="date" formControlName="bottledDate">
-  </div>
-  <div class="form-group">
+  </mat-form-field>
+  <mat-form-field>
     <label for="stored-date">Stored date:</label>
     <input id="stored-date" type="date" formControlName="storedDate">
-  </div>
-  <div class="form-group">
+  </mat-form-field>
+  <mat-form-field>
     <label for="rating">Rating: </label>
     <mat-slider discrete id="rating" min="0" max="5" step="0.25" >
       <input matSliderThumb value="2.5" formControlName="rating">
     </mat-slider>
-  </div>
-  <p>Complete the form to enable button.</p>
-  <button type="submit" [disabled]="!beerForm.valid">Submit</button>
-</form>
+  </mat-form-field>
+</mat-dialog-content>
+<p>Complete the form to enable button.</p>
+<mat-dialog-actions>
+  <button class="mat-raised-button mat-primary" type="submit" [disabled]="!beerForm.valid">Submit</button>
+  <button class="mat-raised-button" type="button" (click)="onCancel()">Cancel</button>
+</mat-dialog-actions>
